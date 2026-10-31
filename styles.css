@@ -34,3 +34,7 @@
 .share-actions{display:flex;gap:9px;margin-top:auto;padding-top:8px}
 .share-actions .btn{padding:11px 13px}
 @media(max-width:760px){.fact-share-section{width:calc(100% - 34px);grid-template-columns:1fr;margin:35px auto}.fact-card,.share-card{padding:20px;min-height:180px}.fact-card p{font-size:26px}.share-card h3{font-size:32px}.compare-avatar{width:55px;height:65px;flex-basis:55px;font-size:19px}.modal-avatar-fallback{min-height:260px;font-size:40px}}
+
+
+/* Historical archive navigation cards are full-page links. */
+.timeline-card{text-decoration:none;color:inherit;}

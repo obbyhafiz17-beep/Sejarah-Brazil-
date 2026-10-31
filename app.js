@@ -146,9 +146,9 @@ function renderTimeline(filter){
   const list=tournaments.filter(t=>filter==="all"||(filter==="champions"&&t.type==="champion")||(filter==="turning"&&t.type==="turning"));
   track.innerHTML=list.map((t,i)=>{
     const top=i%2===0,showImage=[1958,1962,1970,1994,2002,2014,2022].includes(t.year);
-    return '<article class="timeline-item" data-year="'+t.year+'"><span class="timeline-year">'+t.year+'</span><span class="timeline-dot"></span><span class="timeline-stem '+(top?"top":"bottom")+'"></span><button class="timeline-card '+(top?"top":"bottom")+(t.type==="champion"?" yellow-card":"")+'" data-timeline-year="'+t.year+'">'+(showImage?'<img src="'+t.image+'" alt="Arsip Brasil di Piala Dunia '+t.year+'" loading="lazy">':'')+'<span class="timeline-card-body"><small class="event-tag">'+safe(t.host)+' · '+safe(t.tag)+'</small><strong>'+safe(t.result)+'</strong><span class="event-summary">'+safe(t.summary)+'</span><span class="event-link">OPEN STORY ↗</span></span></button></article>';
+    return '<article class="timeline-item" data-year="'+t.year+'"><span class="timeline-year">'+t.year+'</span><span class="timeline-dot"></span><span class="timeline-stem '+(top?"top":"bottom")+'"></span><a class="timeline-card '+(top?"top":"bottom")+(t.type==="champion"?" yellow-card":"")+'" href="stories/'+t.year+'.html" data-timeline-year="'+t.year+'" aria-label="Buka cerita Brasil pada Piala Dunia '+t.year+'">'+(showImage?'<img src="'+t.image+'" alt="Arsip Brasil di Piala Dunia '+t.year+'" loading="lazy">':'')+'<span class="timeline-card-body"><small class="event-tag">'+safe(t.host)+' · '+safe(t.tag)+'</small><strong>'+safe(t.result)+'</strong><span class="event-summary">'+safe(t.summary)+'</span><span class="event-link">OPEN STORY ↗</span></span></a></article>';
   }).join("");
-  $$(".timeline-item",track).forEach(item=>item.addEventListener("click",()=>selectTimeline(Number(item.dataset.year))));
+  $(".timeline-item",track).forEach(item=>{item.addEventListener("mouseenter",()=>selectTimeline(Number(item.dataset.year)));item.addEventListener("focusin",()=>selectTimeline(Number(item.dataset.year)));});
   if(list.length)selectTimeline(list[0].year);
 }
 function selectTimeline(year){

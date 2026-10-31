@@ -44,3 +44,12 @@ Tidak memerlukan build step atau dependency:
 
 ## Tech
 HTML, CSS, vanilla JavaScript. No paid APIs, server, account, or third-party runtime required.
+
+
+## 22 halaman Historical Archive
+Setiap edisi Brasil mempunyai URL HTML tersendiri:
+- `/stories/1930.html` sampai `/stories/2022.html` (22 halaman sesuai edisi yang diikuti Brasil).
+- Setiap kartu Interactive Timeline membuka halaman berdasarkan tahun pada kartu itu.
+- Setiap halaman memuat latar sejarah, seluruh hasil pertandingan Brasil, pemain penting, pelatih, top scorer tim, statistik W/D/L dan gol, analisis gaya bermain, warisan sejarah, fakta, sumber, serta navigasi edisi sebelumnya/berikutnya.
+- Data tersimpan di `stories-data.js`; desain dan renderer bersama ada di `story.css` dan `story-page.js`. URL tiap edisi berbeda dan dapat dibagikan langsung.
+- Jika pertandingan berakhir melalui adu penalti, skor waktu bermain dan hasil adu penalti dipisahkan.
