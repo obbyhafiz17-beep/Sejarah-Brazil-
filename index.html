@@ -51,7 +51,19 @@
     <section class="section-shell section-block squad-section" id="squad">
       <div class="section-heading"><div><span class="eyebrow"><i></i> CHAPTER 03 / THE LINE-UP</span><h2>INSIDE THE <em>SQUAD</em></h2></div><p>Pilih generasi juara. Klik pemain di lapangan untuk membaca peran dan kontribusinya.</p></div>
       <div class="squad-toolbar"><div><span class="micro-label">SELECT A GOLDEN GENERATION</span><select id="squadSelect" class="select-control"><option value="1970">1970 · The beautiful team</option><option value="1994">1994 · The resilient champions</option><option value="2002">2002 · The fifth star</option></select></div><div class="formation-chip"><span>FORMATION</span><b id="formationName">4–2–4</b></div></div>
-      <div class="squad-layout"><div class="pitch-wrap"><div class="pitch-top-label"><span>BRASIL</span><span id="pitchYear">MEXICO 1970 · FINAL XI</span></div><div class="football-pitch" id="footballPitch"><div class="pitch-lines"><span class="halfway"></span><span class="center-circle"></span><span class="penalty-box penalty-top"></span><span class="goal-box goal-top"></span><span class="penalty-box penalty-bottom"></span><span class="goal-box goal-bottom"></span><span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span></div><div id="pitchPlayers"></div></div><div class="pitch-legend"><span><i class="dot dot-active"></i> Selected player</span><span>Tap a shirt to explore</span></div></div>
+      <div class="squad-layout"><div class="pitch-wrap"><div class="pitch-top-label"><span>BRASIL</span><span id="pitchYear">MEXICO 1970 · FINAL XI</span></div><div class="football-pitch" id="footballPitch"><div class="pitch-lines"><span class="halfway"></span><span class="center-circle"></span><span class="penalty-box penalty-top"></span><span class="goal-box goal-top"></span><span class="penalty-box penalty-bottom"></span><span class="goal-box goal-bottom"></span><span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span></div><div id="pitchPlayers" aria-label="Starting eleven Brazil 1970">
+<button type="button" class="pitch-player selected" style="left:50%;top:88%" data-pitch-index="0" data-name="Félix" data-pos="Goalkeeper" data-number="1" data-desc="Penjaga gawang utama Brasil pada final 1970."><span class="shirt">1</span><small>Félix</small></button>
+<button type="button" class="pitch-player" style="left:82%;top:69%" data-pitch-index="1" data-name="Carlos Alberto" data-pos="Right-back · Captain" data-number="4" data-desc="Kapten yang mencetak gol keempat Brasil pada final."><span class="shirt">4</span><small>Carlos A.</small></button>
+<button type="button" class="pitch-player" style="left:62%;top:72%" data-pitch-index="2" data-name="Brito" data-pos="Centre-back" data-number="2" data-desc="Bagian dari duet pertahanan tengah Brasil di final."><span class="shirt">2</span><small>Brito</small></button>
+<button type="button" class="pitch-player" style="left:38%;top:72%" data-pitch-index="3" data-name="Piazza" data-pos="Centre-back" data-number="3" data-desc="Bek tengah yang juga mampu membantu membangun permainan."><span class="shirt">3</span><small>Piazza</small></button>
+<button type="button" class="pitch-player" style="left:18%;top:69%" data-pitch-index="4" data-name="Everaldo" data-pos="Left-back" data-number="6" data-desc="Mengisi sisi kiri pertahanan pada final 1970."><span class="shirt">6</span><small>Everaldo</small></button>
+<button type="button" class="pitch-player" style="left:39%;top:48%" data-pitch-index="5" data-name="Clodoaldo" data-pos="Midfielder" data-number="5" data-desc="Gelandang yang menghubungkan pertahanan dan serangan."><span class="shirt">5</span><small>Clodoaldo</small></button>
+<button type="button" class="pitch-player" style="left:61%;top:48%" data-pitch-index="6" data-name="Gérson" data-pos="Midfielder" data-number="8" data-desc="Pengatur tempo yang mencetak gol kedua Brasil di final."><span class="shirt">8</span><small>Gérson</small></button>
+<button type="button" class="pitch-player" style="left:16%;top:22%" data-pitch-index="7" data-name="Jairzinho" data-pos="Forward" data-number="7" data-desc="Mencetak gol pada seluruh pertandingan Brasil di turnamen 1970."><span class="shirt">7</span><small>Jairzinho</small></button>
+<button type="button" class="pitch-player" style="left:39%;top:18%" data-pitch-index="8" data-name="Tostão" data-pos="Forward" data-number="9" data-desc="Penyerang yang sering turun untuk menghubungkan permainan."><span class="shirt">9</span><small>Tostão</small></button>
+<button type="button" class="pitch-player" style="left:61%;top:18%" data-pitch-index="9" data-name="Pelé" data-pos="Forward" data-number="10" data-desc="Bintang utama Brasil dan pencetak gol pembuka final."><span class="shirt">10</span><small>Pelé</small></button>
+<button type="button" class="pitch-player" style="left:84%;top:22%" data-pitch-index="10" data-name="Rivellino" data-pos="Forward" data-number="11" data-desc="Kreator dari sisi kiri dengan tendangan dan umpan yang kuat."><span class="shirt">11</span><small>Rivellino</small></button>
+</div></div><div class="pitch-legend"><span><i class="dot dot-active"></i> Selected player</span><span>Tap a shirt to explore</span></div></div>
         <aside class="player-inspector" id="playerInspector"><span class="inspector-label">PLAYER SPOTLIGHT</span><div class="inspector-number" id="inspectorNumber">10</div><span class="inspector-position" id="inspectorPosition">FORWARD</span><h3 id="inspectorName">Pelé</h3><p id="inspectorBio">Sosok sentral dalam generasi 1970, menghubungkan lini serang dan menjadi salah satu pencetak gol di final.</p><div class="inspector-stats"><div><b id="inspectorGoals">12</b><span>WC GOALS</span></div><div><b id="inspectorApps">14</b><span>WC APPS</span></div></div><div class="inspector-footnote">Statistik sepanjang karier Piala Dunia putra.</div></aside></div>
       <p class="section-note">Lapangan menampilkan starting XI pada final masing-masing edisi. Letak pemain adalah ilustrasi posisi, bukan rekonstruksi data pelacakan atau instruksi taktik resmi.</p>
     </section>
@@ -83,5 +95,17 @@
   <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark">5<span>★</span></span><span class="brand-copy"><strong>FIVE STAR</strong><small>THE LEGACY</small></span></a><p>ONE NATION. FIVE STARS. A LEGENDARY STORY.</p><a href="#home" class="back-top">BACK TO TOP ↑</a><small class="footer-note">An independent educational fan project. Not affiliated with FIFA or CBF.</small></footer>
   <dialog class="player-modal" id="playerModal"><button class="modal-close" id="modalClose" aria-label="Tutup">×</button><div id="playerModalContent"></div></dialog><div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="app.js" defer></script>
+  <script>
+  (function(){
+    var pitch=document.getElementById("pitchPlayers");
+    if(!pitch)return;
+    pitch.addEventListener("click",function(event){
+      var button=event.target.closest(".pitch-player");if(!button)return;
+      pitch.querySelectorAll(".pitch-player").forEach(function(item){item.classList.toggle("selected",item===button);});
+      var values={inspectorNumber:button.dataset.number,inspectorPosition:(button.dataset.pos||"").toUpperCase(),inspectorName:button.dataset.name,inspectorBio:button.dataset.desc};
+      Object.keys(values).forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=values[id];});
+    });
+  })();
+  </script>
 </body>
 </html>

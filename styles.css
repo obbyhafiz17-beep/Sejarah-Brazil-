@@ -46,3 +46,22 @@
 #pitchPlayers{position:absolute;inset:0;z-index:4;pointer-events:none}
 #pitchPlayers .pitch-player{pointer-events:auto}
 #pitchPlayers .pitch-player:focus-visible{outline:2px solid #ffdf00;outline-offset:4px;border-radius:4px}
+
+
+/* Restore high-contrast yellow labels for every timeline result card. */
+#timeline .timeline-card .event-tag,
+#timeline .timeline-card strong,
+#timeline .timeline-card .event-link{color:#ffdf00!important}
+#timeline .timeline-card .event-summary{color:#c4d0d2!important}
+#timeline .timeline-card.yellow-card .event-tag,
+#timeline .timeline-card.yellow-card strong,
+#timeline .timeline-card.yellow-card .event-link{color:#14251f!important}
+#timeline .timeline-card.yellow-card .event-summary{color:#263c32!important}
+
+/* Reliable visible starting-XI fallback and interactive player markers. */
+#footballPitch{position:relative!important;isolation:isolate;}
+#footballPitch #pitchPlayers{position:absolute!important;inset:0!important;display:block!important;z-index:10!important;pointer-events:none!important;}
+#footballPitch #pitchPlayers .pitch-player{position:absolute!important;display:flex!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important;z-index:11!important;min-width:48px!important;padding:0!important;}
+#footballPitch #pitchPlayers .pitch-player .shirt{width:30px;height:31px;background:#ffdf00!important;color:#10251c!important;}
+#footballPitch #pitchPlayers .pitch-player.selected .shirt{background:#fff!important;}
+#footballPitch #pitchPlayers .pitch-player small{display:block!important;color:#fff!important;font-size:9px!important;line-height:1.2!important;white-space:nowrap!important;text-shadow:0 1px 4px #000,0 0 3px #000!important;background:rgba(0,0,0,.72)!important;border-radius:3px;padding:2px 4px!important;}
