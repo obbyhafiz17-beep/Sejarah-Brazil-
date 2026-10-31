@@ -148,10 +148,10 @@ function renderTimeline(filter){
     const top=i%2===0,showImage=[1958,1962,1970,1994,2002,2014,2022].includes(t.year);
     return '<article class="timeline-item" data-year="'+t.year+'"><span class="timeline-year">'+t.year+'</span><span class="timeline-dot"></span><span class="timeline-stem '+(top?"top":"bottom")+'"></span><a class="timeline-card '+(top?"top":"bottom")+(t.type==="champion"?" yellow-card":"")+'" href="stories/'+t.year+'.html" data-timeline-year="'+t.year+'" aria-label="Buka cerita Brasil pada Piala Dunia '+t.year+'">'+(showImage?'<img src="'+t.image+'" alt="Arsip Brasil di Piala Dunia '+t.year+'" loading="lazy">':'')+'<span class="timeline-card-body"><small class="event-tag">'+safe(t.host)+' · '+safe(t.tag)+'</small><strong>'+safe(t.result)+'</strong><span class="event-summary">'+safe(t.summary)+'</span><span class="event-link">OPEN STORY ↗</span></span></a></article>';
   }).join("");
-  $(".timeline-item",track).forEach(item=>{item.addEventListener("mouseenter",()=>selectTimeline(Number(item.dataset.year)));item.addEventListener("focusin",()=>selectTimeline(Number(item.dataset.year)));});
+  $(".timeline-item",track).forEach(item=>{item.addEventListener("mouseenter",()=>selectTimeline(Number(item.dataset.year),false));item.addEventListener("focusin",()=>selectTimeline(Number(item.dataset.year),false));});
   if(list.length)selectTimeline(list[0].year);
 }
-function selectTimeline(year){
+function selectTimeline(year,scrollToItem=true){
   const t=tournaments.find(x=>x.year===year);if(!t)return;
   $$(".timeline-item").forEach(el=>el.classList.toggle("selected",Number(el.dataset.year)===year));
   $("#timelineSelectedYear").textContent=t.year;
@@ -160,7 +160,7 @@ function selectTimeline(year){
   $("#timelineDetailText").textContent=t.detail;
   $("#timelineDetailScore").textContent=t.score;
   const item=$('.timeline-item[data-year="'+year+'"]');
-  if(item&&window.innerWidth>760){const win=$("#timelineWindow");win.scrollTo({left:Math.max(0,item.offsetLeft+item.offsetWidth/2-win.clientWidth/2),behavior:"smooth"});}
+  if(scrollToItem&&item&&window.innerWidth>760){const win=$("#timelineWindow");win.scrollTo({left:Math.max(0,item.offsetLeft+item.offsetWidth/2-win.clientWidth/2),behavior:"smooth"});}
 }
 let timelineFilter="all";renderTimeline(timelineFilter);
 $$("[data-timeline-filter]").forEach(btn=>btn.addEventListener("click",()=>{
