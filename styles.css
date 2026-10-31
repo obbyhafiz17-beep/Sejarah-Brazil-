@@ -38,3 +38,11 @@
 
 /* Historical archive navigation cards are full-page links. */
 .timeline-card{text-decoration:none;color:inherit;}
+
+
+/* INSIDE THE SQUAD: keep formation markers in a dedicated pitch overlay. */
+#footballPitch{isolation:isolate}
+#footballPitch .pitch-lines{z-index:1}
+#pitchPlayers{position:absolute;inset:0;z-index:4;pointer-events:none}
+#pitchPlayers .pitch-player{pointer-events:auto}
+#pitchPlayers .pitch-player:focus-visible{outline:2px solid #ffdf00;outline-offset:4px;border-radius:4px}

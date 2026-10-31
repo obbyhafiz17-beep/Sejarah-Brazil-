@@ -209,8 +209,12 @@ function renderSquad(year){
   const squad=squads[year];if(!squad)return;
   $("#formationName").textContent=squad.formation;$("#pitchYear").textContent=squad.year;
   const host=$("#pitchPlayers");
-  host.innerHTML=squad.players.map((p,i)=>'<button class="pitch-player '+(i===0?"selected":"")+'" style="left:'+p.x+'%;top:'+p.y+'%" data-pitch-index="'+i+'" aria-label="'+safe(p.name)+', '+safe(p.pos)+'"><span class="shirt">'+p.n+'</span><small>'+safe(p.name.split(" ")[0])+'</small></button>').join("");
-  $$(".pitch-player",host).forEach(btn=>btn.addEventListener("click",()=>selectPitchPlayer(squad,Number(btn.dataset.pitchIndex))));
+  if(!host || !Array.isArray(squad.players) || !squad.players.length)return;
+  host.style.position="absolute";
+  host.style.inset="0";
+  host.style.zIndex="4";
+  host.innerHTML=squad.players.map((p,i)=>'<button type="button" class="pitch-player '+(i===0?"selected":"")+'" style="left:'+p.x+'%;top:'+p.y+'%" data-pitch-index="'+i+'" aria-label="'+safe(p.name)+', '+safe(p.pos)+'"><span class="shirt">'+p.n+'</span><small>'+safe(p.name.split(" ")[0])+'</small></button>').join("");
+  $(".pitch-player",host).forEach(btn=>btn.addEventListener("click",()=>selectPitchPlayer(squad,Number(btn.dataset.pitchIndex))));
   selectPitchPlayer(squad,0);
 }
 function selectPitchPlayer(squad,index){
